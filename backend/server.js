@@ -39,6 +39,10 @@ app.get('/',(req,res) => {
     res.send('Welcome to the Rock-Paper-Scissors Game API! Use POST /play with a JSON body { "choice": "rock" } to play.');
 })
 
+app.get('/health',(req,res)=>{
+    res.json({status : "OK"});
+})
+
 app.listen(PORT, () => {
     console.log(`Server running on port : ${PORT}`);
 })
