@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());  //-- This line applies the CORS middleware to the Express application, enabling it to handle cross-origin requests.
 app.use(express.json());  //-- This line allows the server to parse incoming JSON payloads, making it easier to handle data sent in the body of requests.
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5000;
 
 const choices = ["rock","paper","scissors"];
 
