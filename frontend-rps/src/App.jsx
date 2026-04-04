@@ -5,7 +5,7 @@ function App() {
   const [result, setResult] = useState(null);
 
   const play = async (choice) => {
-    const res = await axios.post("http://localhost:5000/play", {
+    const res = await axios.post("http://backend:5000/play", {
       choice,
     });
     setResult(res.data);
