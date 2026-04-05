@@ -5,10 +5,17 @@ function App() {
   const [result, setResult] = useState(null);
 
   const play = async (choice) => {
-    const res = await axios.post("http://backend:5000/play", {
+    try {
+    const res = await axios.post("http://localhost:5000/play", {
       choice,
     });
+
+    console.log(res.data);
+
     setResult(res.data);
+  } catch (err) {
+    console.error(err);
+  }
   };
 
   return (
@@ -21,9 +28,9 @@ function App() {
 
       {result && (
         <div>
-          <p>You: {result.userChoice}</p>
-          <p>Computer: {result.computerChoice}</p>
-          <h2>Winner: {result.winner}</h2>
+          <p>You: {result.player}</p>
+          <p>Computer: {result.computer}</p>
+          <h2>Winner: {result.result}</h2>
         </div>
       )}
     </div>
